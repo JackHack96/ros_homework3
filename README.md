@@ -7,7 +7,7 @@ The assignment was the following:
 > Clusterize the map.
 
 ## Package structure
-The `ORB_SLAM2` folder contains a modded version of the original ORB_SLAM2
+The `ORB_SLAM2_mod` folder contains a modded version of the original ORB_SLAM2
 
 ## How to launch
 
