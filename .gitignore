@@ -74,3 +74,5 @@ ORB_SLAM2_mod/Vocabulary/ORBvoc.txt
 ORB_SLAM2_mod/build/
 ORB_SLAM2_mod/*~
 ORB_SLAM2_mod/lib/
+
+*.txt

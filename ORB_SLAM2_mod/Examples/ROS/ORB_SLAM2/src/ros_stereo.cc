@@ -115,8 +115,6 @@ int main(int argc, char **argv)
     message_filters::Synchronizer<sync_pol> sync(sync_pol(10), left_sub,right_sub);
     sync.registerCallback(boost::bind(&ImageGrabber::GrabStereo,&igb,_1,_2));
 
-    std::cout << "You spin me round!\n";
-
     ros::spin();
 
     // Stop all threads
