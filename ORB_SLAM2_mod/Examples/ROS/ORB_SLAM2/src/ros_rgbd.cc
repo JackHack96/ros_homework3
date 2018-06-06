@@ -78,6 +78,9 @@ int main(int argc, char **argv)
 
     // Save camera trajectory
     SLAM.SaveKeyFrameTrajectoryTUM("KeyFrameTrajectory.txt");
+    
+    // save the pointcloud
+    SLAM.CreatePCD("pointcloud.pcd");
 
     ros::shutdown();
 
