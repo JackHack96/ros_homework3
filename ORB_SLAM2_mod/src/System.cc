@@ -472,26 +472,52 @@ void System::SaveTrajectoryKITTI(const string &filename)
     cout << endl << "trajectory saved!" << endl;
 }
 
-void System::SaveMapPoints(const string &filename)
+void System::CreatePCD(const string &filename)
 {
     cout << endl << "Saving map points to " << filename << " ..." << endl;
-    vector<MapPoint*> vpMPs = mpMap->GetAllMapPoints();
 
-    // Transform all keyframes so that the first keyframe is at the origin.
-    // After a loop closure the first keyframe might not be at the origin.
+    vector<MapPoint*> vMPs = mpMap->GetAllMapPoints();
+
+    //create pcd initialization string
+    std::string begin = std::string("# .PCD v.7 - Point Cloud Data file format\nVERSION .7\n");
+    // add the fields:
+    begin += "FIELDS x y z\n";
+    // add the size (4 for float):
+    begin += "SIZE 4 4 4\n";
+    // add the type:
+    begin += "TYPE F F F\n";
+    // add the count(ammount of dimension (1 for x)):
+    begin += "COUNT 1 1 1\n";
+    // add the width:
+    int width = vMPs.size();
+    begin += "WIDTH ";
+    begin += std::to_string(width);
+    // add the height:
+    begin += "\nHEIGHT 1\n";
+    // add the viewpoint:
+    begin += "VIEWPOINT 0 0 0 1 0 0 0\n";
+    // add the amount of points:
+    begin += "POINTS ";
+    begin += std::to_string(width);
+    // add the datatype:
+    begin += "\nDATA ascii\n";
+
+    //open the file
     ofstream f;
     f.open(filename.c_str());
-    f << fixed;
+    // write the begin
+    f << begin;
 
-    for(size_t i=0; i<vpMPs.size(); i++) {
-        MapPoint* pMP = vpMPs[i];
+    //write the points
+    for(size_t i=0; i<vMPs.size(); i++) {
+        MapPoint* pMP = vMPs[i];
 
         if(pMP->isBad())
-            continue;
+                continue;
 
         cv::Mat MPPositions = pMP->GetWorldPos();
 
-        f << setprecision(7) << " " << MPPositions.at<float>(0) << " " << MPPositions.at<float>(1) << " " << MPPositions.at<float>(2) << endl;
+        f << setprecision(7)<< MPPositions.at<float>(0) << " " << MPPositions.at<float>(1) << " " << MPPositions.at<float>(2) << endl;
     }
 
     f.close();

@@ -125,9 +125,8 @@ int main(int argc, char **argv)
     SLAM.SaveTrajectoryTUM("FrameTrajectory_TUM_Format.txt");
     SLAM.SaveTrajectoryKITTI("FrameTrajectory_KITTI_Format.txt");
 
-    std::cout << "Saving map...\n";
-
-    SLAM.SaveMapPoints("MapPointsSave.txt");
+    // save the pointcloud
+    SLAM.CreatePCD("pointcloud.pcd");
 
     ros::shutdown();
 

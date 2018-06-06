@@ -112,7 +112,8 @@ public:
     // See format details at: http://www.cvlibs.net/datasets/kitti/eval_odometry.php
     void SaveTrajectoryKITTI(const string &filename);
 
-    void SaveMapPoints(const string &filename);
+    // Save the map points
+    void CreatePCD(const string &filename);
 
     // TODO: Save/Load functions
     // SaveMap(const string &filename);

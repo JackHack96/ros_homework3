@@ -27,3 +27,5 @@ rm -rf ORB_SLAM2_mod/Thirdparty/g2o/lib
 rm ORB_SLAM2_mod/Thirdparty/g2o/config.h
 
 rm ORB_SLAM2_mod/Vocabulary/ORBvoc.txt
+
+rm -rf Cluster/build
