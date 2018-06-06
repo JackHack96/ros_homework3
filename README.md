@@ -38,6 +38,7 @@ Euclidean clustering with `0.26` tolerance value:
 ![C26](Screenshots/C26.png)
 Euclidean clustering with `0.28` tolerance value:
 ![C28](Screenshots/C28.png)
+In the `Screenshots` folder you can find a video showing the generated pointcloud map.
 
 
 ---
