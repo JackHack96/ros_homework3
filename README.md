@@ -10,7 +10,7 @@ The assignment was the following:
 The `ORB_SLAM2_mod` folder contains a modded version of the original ORB_SLAM2, which allows to save the generated map.
 The code was created by Jeroen Zijlmans, you can find the original post [here](https://medium.com/@j.zijlmans/orb-slam-2052515bd84c).
 I also commented out two lines in `ORB_SLAM2_mod/src/system.cc` which were causing a deadlock while communicating with `libpangolin`.
-The `Cluster` folder contains a little modified version of the one you can find [here](http://www.pointclouds.org/documentation/tutorials/cluster_extraction.php).
+The `Cluster` folder contains a little modified version of the clusterizer you can find [here](http://www.pointclouds.org/documentation/tutorials/cluster_extraction.php).
 
 There are three scripts provided:
 - **`build.sh`** which automatically builds ORB_SLAM2, the ROS package example and the clusterizer
@@ -24,7 +24,8 @@ After making sure you have all the required dependencies (which you can find [he
 Change the `V1_01_easy.bag` path in `run.sh` according to your path, the run `run.sh`.
 When the bag is loaded, press `[SPACE]` in the bag terminal.
 If everything goes right, a file named `pointcloud.pcd` is generated.
-You can clusterize it using the `cluster_extraction` tool you find in the `build` directory inside `Cluster`.
+You can view the pointcloud file using the `pcl_viewer` tool (simply pass the `.pcl` file as an argument).
+After that, you can clusterize it using the `cluster_extraction` tool you find in the `build` directory inside `Cluster`.
 Simply launch the clusterizer with the file name and the cluster tolerance, like this:
 `./cluster_extraction pointcloud.pcd 0.28`.
 
