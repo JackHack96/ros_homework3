@@ -33,6 +33,8 @@ After that, you can clusterize it using the `cluster_extraction` tool you find i
 Simply launch the clusterizer with the file name and the cluster tolerance, like this:
 `./cluster_extraction pointcloud.pcd 0.28`.
 
+View the results with `pcl_viewer`. You can also view multiple pointclouds at the same time, simply pass them all together as arguments (wildcards are allowed, like `pcl_viewer cloud_point_*`).
+
 ## Screenshots
 ORB_SLAM2 analyzing the room:
 ![S1](Screenshots/S1.png)
