@@ -42,8 +42,8 @@ In the `Screenshots` folder you can find a video showing the generated pointclou
 
 
 ---
-This file is part of `ros_homework2` and it is distributed under the terms of the GNU General Public License 3
+This file is part of `ros_homework3` and it is distributed under the terms of the GNU General Public License 3
 
-`ros_homework2` is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License 3 for more details.
+`ros_homework3` is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License 3 for more details.
 
-You should have received a copy of the GNU General Public License along with `ros_homework2`. If not, see http://www.gnu.org/licenses/.
+You should have received a copy of the GNU General Public License along with `ros_homework3`. If not, see http://www.gnu.org/licenses/.
